@@ -1,27 +1,54 @@
 #include "grafo.h"
 
-int main(){
+void menu_principal();
+void menu_adm();
+void menu_usr();
 
-	int opcao=0, menu_usr, menu_adm;
-	char nome[20];
+int opcao=0;
 
-	Graf aux5;
+int main(int argc, char const *argv[]){
 
-	while(opcao != 3){
-		printf("---------------------------------------\n");
-		printf("Rede Social para Economia Compartilhada\n");
-		printf("---------------------------------------\n");
-		printf("\n1-Usuário\n");
-		printf("2-Administrador\n");
-		printf("3-Sair do sistema\n");
-		printf("\n\nDigite a opção desejada:");
-		scanf("%d", &opcao);
-		getchar();
+menu_principal();
 
+return(0);
+}
 
-		switch(opcao){
-			case 1:
-				while(menu_usr != 6){
+void menu_principal(){
+char nome[20];
+
+Graf aux5;
+
+while(opcao != 3){
+	system("clear");
+	printf("---------------------------------------\n");
+	printf("Rede Social para Economia Compartilhada\n");
+	printf("---------------------------------------\n");
+	printf("\n1-Usuário\n");
+	printf("2-Administrador\n");
+	printf("3-Sair do sistema\n");
+	printf("\n\nDigite a opção desejada:");
+	scanf("%d", &opcao);
+	getchar();
+
+	switch(opcao){
+		case 1:
+			menu_usr();
+			break;
+		case 2:
+			menu_adm();
+			break;
+		case 3:
+			exit(0);
+			break;
+	}
+}
+}
+
+void menu_usr(){
+char * nome;
+opcao = 0;
+				while(opcao != 6){
+		 		 system("clear");
 		 		 printf("---------------------------------------\n");
 				 printf("Rede Social para Economia Compartilhada\n");
 		 		 printf("---------------------------------------\n\n");
@@ -33,20 +60,22 @@ int main(){
 		 		 printf("5-Fazer uma transação e as avaliações\n");
 		 		 printf("6-Voltar para tela inicial.\n");
 		 		 printf("\n\nDigite a opção desejada:");
-				 scanf("%d", &menu_usr);
+				 scanf("%d", &opcao);
 				 getchar();
 
-				 if(menu_usr == 1){
+				 if(opcao == 1){
 				 	printf("Digite o nome da pessoa:");
 				 	scanf("%s", nome);
 				 	Graf aux = cria_grafo(nome);
 				 }
 				 
-				}
-			break;
+	}
+}
 
-			case 2:
-				while(menu_adm != 5){
+void menu_adm(){
+	opcao = 0;
+				while(opcao != 5){
+		 		 system("clear");
 		 		 printf("---------------------------------------\n");
 		 		 printf("Rede Social para Economia Compartilhada\n");
 		 		 printf("---------------------------------------\n\n");
@@ -57,17 +86,11 @@ int main(){
 		 		 printf("4-Saber das transações feitas\n");
 		 		 printf("5-Voltar para tela inicial.\n");
 		 		 printf("\n\nDigite a opção desejada:");
-		 		 scanf("%d", &menu_adm);
+		 		 scanf("%d", &opcao);
 		 		 getchar();
 		 		}
-			break;
 
-			case 3:
-				return(0);
-			break;
-		}
-	}
-}	
+}
 
 	/*Graf aux = cria_grafo("MP Grafo 1");
 	visualiza_grafo(aux);
