@@ -2,74 +2,13 @@
 
 int main(){
 
-	int opcao=0, menu_usr, menu_adm;
-	char nome[20];
-
 	Graf aux5;
 
-	while(opcao != 3){
-		printf("---------------------------------------\n");
-		printf("Rede Social para Economia Compartilhada\n");
-		printf("---------------------------------------\n");
-		printf("\n1-Usuário\n");
-		printf("2-Administrador\n");
-		printf("3-Sair do sistema\n");
-		printf("\n\nDigite a opção desejada:");
-		scanf("%d", &opcao);
-		getchar();
+	printf("--------------------------------\n");
+	printf("Teste 1 - cria_grafo(char *nome)\n");
+	printf("--------------------------------\n");
 
-
-		switch(opcao){
-			case 1:
-				while(menu_usr != 6){
-		 		 printf("---------------------------------------\n");
-				 printf("Rede Social para Economia Compartilhada\n");
-		 		 printf("---------------------------------------\n\n");
-		 		 printf("***************Usuário*****************\n\n");
-		 		 printf("1-Criar pessoa\n");
-		 		 printf("2-Editar pessoa, todos os dados inclusive amizades\n");
-		 		 printf("3-Excluir pessoa\n");
-		 		 printf("4-Procurar por uma transação de acordo com os critérios desejados\n");
-		 		 printf("5-Fazer uma transação e as avaliações\n");
-		 		 printf("6-Voltar para tela inicial.\n");
-		 		 printf("\n\nDigite a opção desejada:");
-				 scanf("%d", &menu_usr);
-				 getchar();
-
-				 if(menu_usr == 1){
-				 	printf("Digite o nome da pessoa:");
-				 	scanf("%s", nome);
-				 	Graf aux = cria_grafo(nome);
-				 }
-				 
-				}
-			break;
-
-			case 2:
-				while(menu_adm != 5){
-		 		 printf("---------------------------------------\n");
-		 		 printf("Rede Social para Economia Compartilhada\n");
-		 		 printf("---------------------------------------\n\n");
-		 		 printf("*************Administrador*************\n\n");
-		 		 printf("1-Visualizar as informações das pessoas através de um grafo.\n");
-		 		 printf("2-Cadastrar transações.\n");
-		 		 printf("3-Descadastrar transações\n");
-		 		 printf("4-Saber das transações feitas\n");
-		 		 printf("5-Voltar para tela inicial.\n");
-		 		 printf("\n\nDigite a opção desejada:");
-		 		 scanf("%d", &menu_adm);
-		 		 getchar();
-		 		}
-			break;
-
-			case 3:
-				return(0);
-			break;
-		}
-	}
-}	
-
-	/*Graf aux = cria_grafo("MP Grafo 1");
+	Graf aux = cria_grafo("MP Grafo 1");
 	visualiza_grafo(aux);
 	Graf aux2 = cria_grafo("MP Grafo 2");
 	visualiza_grafo(aux2);
@@ -132,7 +71,7 @@ int main(){
 	remove_aresta(aux2, 1, 8);
 	remove_aresta(aux2, 8, 4);
 	/*remove_aresta(aux2, 7, 7);                    se colocar uma aresta que não existe dá segementation fault*/
-	/*visualiza_grafo(aux2);
+	visualiza_grafo(aux2);
 	printf("\nPressione qualquer tecla para continuar...");
 	getchar();
 
@@ -221,4 +160,4 @@ int main(){
 	getchar();
 
 	return (0);
-}*/
+}
