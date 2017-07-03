@@ -1,6 +1,6 @@
 IDIR =../include
 CC=gcc
-CFLAGS=-g -I$(IDIR)
+CFLAGS=-g -I$(IDIR) -lncurses
 
 ODIR=obj
 LDIR =../lib
