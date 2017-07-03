@@ -8,7 +8,15 @@
 
 #endif
 
+int src_rows;
+int src_cols;
+
 typedef struct Grafo *Graf;
+
+typedef enum{
+		GUI_OK,
+		GUI_ERR,
+}gui_ret;
 
 
 Graf cria_grafo (char *nome); /*retorna estrutura de dados grafo que tem um nome*/

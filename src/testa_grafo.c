@@ -12,9 +12,9 @@ int main(int argc, char const *argv[]){
 	getmaxyx(stdscr, src_rows, src_cols);
 
 	bkgd(COLOR_PAIR(2));
-		//possibilita o uso de cores
+
 	start_color();
-		//definição dos pares
+
     init_pair(1,COLOR_WHITE,COLOR_BLUE);
     init_pair(2,COLOR_BLUE,COLOR_WHITE);
     init_pair(3,COLOR_RED,COLOR_WHITE);
@@ -30,7 +30,7 @@ return 0;
 
 void menu_principal(){
 
-		clear();
+	clear();
 	while(opcao != 3){
 		printw("---------------------------------------\n");
 		printw("Rede Social para Economia Compartilhada\n");
@@ -40,18 +40,20 @@ void menu_principal(){
 		printw("3-Sair do sistema\n");
 		printw("\n\nDigite a opção desejada:");
 		refresh();	
-		opcao = getch();
+		scanw("%d", &opcao);
+		printw("%d\n", opcao);
 	
-		if(opcao = 1){
-			menu_usr();
-		}else if(opcao = 2){
-			menu_adm();
-		}else if(opcao = 3){
-			exit(0);
-		}else if(opcao < 1 || opcao > 3){
-			printw("Digite uma opção válida");
+		switch(opcao){
+			case 1:
+				menu_usr();
+				break;
+			case 2:
+				menu_adm();
+				break;
+			case 3:
+				exit(0);
+				break;
 		}
-
 	}
 }
 
